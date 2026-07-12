@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map task</title>
+</head>
+
+<body>
+
+    <script>
+        // Exercise 1:
+        function doubleNumbers(arr) {
+            let dnumber = arr.map((item) => {
+                return item * 2;
+            });
+            return dnumber;
+        }
+        console.log(doubleNumbers([2, 5, 100]));
+
+        // Exercise 2:
+        function stringItUp(arr) {
+            let sarr = arr.map((item) => {
+                return `${item}`;
+            });
+            return sarr;
+
+        }
+        console.log(stringItUp([2, 5, 100]));
+
+
+        // Exercise 3:
+        function capitalizeNames(arr) {
+            return arr.map((item) => {
+                item = item.toLowerCase();
+                item = item.split("");
+                item[0] = item[0].toUpperCase();
+                return item.join("");
+            });
+        }
+        console.log(capitalizeNames(["john", "JACOB", "jinGleHeimer", "schmidt"]));
+
+        // Exercise 4:
+        function namesOnly(arr) {
+            return arr.map((item) => {
+                return item.name;
+            });
+        }
+        let ar = [
+            {
+                name: "Angelina Jolie",
+                age: 80
+            },
+            {
+                name: "Eric Jones",
+                age: 2
+            },
+            {
+                name: "Paris Hilton",
+                age: 5
+            },
+            {
+                name: "Kayne West",
+                age: 16
+            },
+            {
+                name: "Bob Ziroll",
+                age: 100
+            }
+        ]
+        console.log(namesOnly(ar));
+
+        // Exercise 5
+        function makeStrings(arr) {
+            return arr.map((item) => {
+                if (item.age > 18)
+                    return item.name + " can go to The Matrix";
+                else
+                    return item.name + " is under age!!";
+            })
+        }
+
+        console.log(makeStrings(ar));
+
+        // Exercise 6:
+        function readyToPutInTheDOM(arr) {
+            return arr.map((item) => {
+                return `<h1>${item.name}</h1><h2>${item.age}</h2>`
+            })
+        }
+        console.log(readyToPutInTheDOM(ar));
+
+        // Exercise 7:
+        function doubleValues(arr) {
+            return arr.map((item) => {
+                return item * 2;
+            })
+        }
+        console.log(doubleValues([1, 2, 3]));
+        console.log(doubleValues([1, -2, -3]));
+
+        // Exercise 8:
+        function valTimesIndex(arr) {
+            return arr.map((item, index) => {
+                return item * index;
+            })
+        }
+        console.log(valTimesIndex([1, 2, 3]));
+        console.log(valTimesIndex([1, -2, -3]));
+
+        // Exercise 9:
+        function extractKey(arr, key) {
+            return arr.map((item) => {
+                return item[key];
+            })
+        }
+        console.log(extractKey([{ name: 'Elie' }, { name: 'Tim' }, { name: 'Matt' }, { name: 'Colt' }], 'name'));
+
+        // Exercise 10:
+        function extractFullName(arr) {
+            return arr.map((item) => {
+                return item.first + " " + item.last;
+            })
+        }
+        console.log(extractFullName([{ first: 'Elie', last: "Schoppik" }, { first: 'Tim', last: "Garcia" }, { first: 'Matt', last: "Lane" }, { first: 'Colt', last: "Steele" }]));
+
+
+    </script>
+
+</body>
+
+</html>
